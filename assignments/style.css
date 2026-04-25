@@ -1,24 +1,27 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #eef2f7;
-  padding: 40px;
+  background-color: #4a90e2;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 ol {
-  background-color: #ffffff;
+  background: #ffffff;
   padding: 20px;
-  border-radius: 8px;
-  width: 280px;
-  color: #333;
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-ul {
-  margin-left: 20px;
+  border-radius: 10px;
+  width: 300px;
 }
 
 li {
-  margin: 3px 0;
-  color: #666;
+  margin: 6px 0;
+  color: #333;
+  font-weight: 500;
+}
+
+ul li {
+  color: #555;
+  font-weight: normal;
 }
