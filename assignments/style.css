@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #121212;
+  background-color: #0b1d3a;
   margin: 0;
   padding: 40px;
 }
@@ -11,7 +11,7 @@ ol {
 
 li {
   margin: 12px 0;
-  color: #f1f1f1;
+  color: #e6f0ff;
   font-size: 18px;
 }
 
@@ -21,11 +21,11 @@ ul {
 }
 
 ul li {
-  color: #9ecbff;
+  color: #7fb3ff;
   font-size: 16px;
 }
 
 li:hover {
-  color: #ff8c8c;
+  color: #ffd166;
   cursor: pointer;
 }
