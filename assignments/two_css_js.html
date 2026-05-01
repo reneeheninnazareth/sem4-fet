@@ -31,45 +31,53 @@
 </ol>
 
 <button onclick="changeSkill()">CLICK ME TO CHANGE ROLE</button>
-
-    
-  <script>
+<script>
 function changeSkill(){
 
   let c = prompt("Select Category:\n1-Frontend\n2-Styling\n3-Tools");
-  let i = prompt("Select Skill Number");
-
   let id = "";
 
   if(c == 1){
+    let i = prompt("Select Skill Number (1-3)");
     if(i == 1) id = "f1";
     else if(i == 2) id = "f2";
     else if(i == 3) id = "f3";
+    else {
+      alert("Invalid skill");
+      return;
+    }
   }
   else if(c == 2){
+    let i = prompt("Select Skill Number (1-2)");
     if(i == 1) id = "s1";
     else if(i == 2) id = "s2";
+    else {
+      alert("Invalid skill");
+      return;
+    }
   }
   else if(c == 3){
+    let i = prompt("Select Skill Number (1-3)");
     if(i == 1) id = "t1";
     else if(i == 2) id = "t2";
-    else if(i==3)id="t3";
+    else if(i == 3) id = "t3";
+    else {
+      alert("Invalid skill");
+      return;
+    }
   }
   else{
     alert("Invalid category");
-    return; 
+    return;
   }
 
-  if(id != ""){
-    let newSkill = prompt("Enter new skill");
-    document.getElementById(id).innerHTML = newSkill;
-    alert("Updated!");
-  } else {
-    alert("Invalid choice");
-  }
-
+  let newSkill = prompt("Enter new skill");
+  document.getElementById(id).innerHTML = newSkill;
+  alert("Updated!");
 
 }
 </script>
+    
+  
 </body>
 </html>
