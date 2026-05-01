@@ -55,6 +55,10 @@ function changeSkill(){
     else if(i == 2) id = "t2";
     else if(i==3)id="t3";
   }
+  else{
+    alert("Invalid category");
+    return; 
+  }
 
   if(id != ""){
     let newSkill = prompt("Enter new skill");
