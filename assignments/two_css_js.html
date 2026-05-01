@@ -3,32 +3,61 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <ol>
+    <ul>
       <li> FRONTEND  DEVELOPMENT</li>
-      <ul>
+      <ol>
         <li>HTML5</li>
         <li>CSS3</li>
         <li>Javascript</li>
-      </ul>
+      </ol>
       <li>STYLING &FRAMEWORK</li>
-      <ul>
+      <ol>
         <li>BOOTSTRAP</li>
         <li>TAILWIND CSS</li>
-      </ul>
+      </ol>
       <li> TOOLS & PLATFORMS</li>
-      <ul>
+      <ol>
         <li>GIT</li>
         <li>GITHUB</li>
       <li>VS CODE</li>
-      </ul>
-    </ol>
-    <button onclick="ChangeName()">CLICK ME TO CHANGE ROLE</buttton>
+      </ol>
+    </ul>
+    <button onclick="changeSkill()">CLICK ME TO CHANGE ROLE</buttton>
   </body>
+  
+    
   <script>
-  function ChangeName(){
-  let name=prompt("enter new skill")
-  document.getElementById("demo").innerHTML=name;
-  alert("Skill Updated Successfully");
-   }
-  </script>
+function changeSkill(){
+
+  let c = prompt("Select Category:\n1-Frontend\n2-Styling\n3-Tools");
+  let i = prompt("Select Skill Number");
+
+  let id = "";
+
+  if(c == 1){
+    if(i == 1) id = "f1";
+    else if(i == 2) id = "f2";
+    else if(i == 3) id = "f3";
+  }
+  else if(c == 2){
+    if(i == 1) id = "s1";
+    else if(i == 2) id = "s2";
+  }
+  else if(c == 3){
+    if(i == 1) id = "t1";
+    else if(i == 2) id = "t2";
+  }
+
+  if(id != ""){
+    let newSkill = prompt("Enter new skill");
+    document.getElementById(id).innerHTML = newSkill;
+    alert("Updated!");
+  } else {
+    alert("Invalid choice");
+  }
+
+
+}
+</script>
+
 </html>
