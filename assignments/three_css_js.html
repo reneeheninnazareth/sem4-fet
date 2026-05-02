@@ -41,7 +41,20 @@
 <input type='submit' value='Submit'>
 </form>
 </div>
-<script>
+<script><script>
+function showdata(e){
+e.preventDefault();
+let name=document.getElementById("name").value;
+let edu=document.getElementById("edu").value;
+let email=document.getElementById("email").value;
+let gender=document.querySelector('input[name="gender"]:checked');
+let lng=document.querySelectorAll(".lng:checked");
+let list=[];
+lng.forEach(1=>list.push(1.value));
+docment.getElementById("result").innerHTML=
+"Name:"+name+"<br>"
++"Education:"+edu+"<br>"+
+</script>
 
 </script>
 </body>
