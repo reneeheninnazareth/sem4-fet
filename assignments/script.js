@@ -19,17 +19,19 @@ function savePassword(){
 
     result.innerHTML =
     "<span style='color:green; font-weight:bold;'>"
-    + "Password Created Successfully<br>"
-    + "Now enter password to access information"
+    + "Password Created Successfully"
     + "</span>";
 
-    // Hide create section
+    // Hide create password section
     document.getElementById("createSection").style.display =
     "none";
 
     // Show login section
     document.getElementById("loginSection").style.display =
     "block";
+
+    // Automatically move cursor to password box
+    document.getElementById("checkPassword").focus();
 }
 
 function checkPassword(){
