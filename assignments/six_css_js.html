@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Check</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#eef4ff;
+            text-align:center;
+            padding-top:50px;
+        }
+
+        .box{
+            width:300px;
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin-top:10px;
+        }
+
+        button{
+            padding:10px 20px;
+            margin-top:15px;
+            background:#1e3a8a;
+            color:white;
+            border:none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Password Validation</h2>
+
+    <input type="password" id="pass"
+    placeholder="Enter Password">
+
+    <button onclick="checkPassword()">
+        Submit
+    </button>
+
+    <p id="result"></p>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
