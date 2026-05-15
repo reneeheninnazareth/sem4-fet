@@ -83,32 +83,10 @@
             border-radius:10px;
             text-align:center;
             font-size:16px;
-            word-wrap:break-word;
         }
 
-        @media(max-width:600px){
-
-            .container{
-                padding:20px;
-            }
-
-            h2{
-                font-size:24px;
-            }
-
-            input{
-                font-size:15px;
-                padding:12px;
-            }
-
-            button{
-                font-size:15px;
-                padding:12px;
-            }
-
-            #result{
-                font-size:15px;
-            }
+        #loginSection{
+            display:none;
         }
 
     </style>
@@ -118,27 +96,37 @@
 
 <div class="container">
 
-    <h2>Create and Verify Password</h2>
+    <h2>Password Security System</h2>
 
-    <label>Create Password</label>
+    <!-- Create Password Section -->
+    <div id="createSection">
 
-    <input type="password"
-    id="createPassword"
-    placeholder="Enter New Password">
+        <label>Create Password</label>
 
-    <button onclick="savePassword()">
-        Save Password
-    </button>
+        <input type="password"
+        id="createPassword"
+        placeholder="Enter New Password">
 
-    <label>Enter Password</label>
+        <button onclick="savePassword()">
+            Save Password
+        </button>
 
-    <input type="password"
-    id="checkPassword"
-    placeholder="Enter Password to Login">
+    </div>
 
-    <button onclick="checkPassword()">
-        Login
-    </button>
+    <!-- Login Section -->
+    <div id="loginSection">
+
+        <label>Enter Password</label>
+
+        <input type="password"
+        id="checkPassword"
+        placeholder="Enter Password">
+
+        <button onclick="checkPassword()">
+            Login
+        </button>
+
+    </div>
 
     <div id="result">
         Create your password first
