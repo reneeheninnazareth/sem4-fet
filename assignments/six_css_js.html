@@ -6,6 +6,7 @@
     content="width=device-width, initial-scale=1.0">
 
     <title>Password Security System</title>
+
 <style>
 
     *{
@@ -75,6 +76,7 @@
         font-weight:bold;
         cursor:pointer;
         transition:0.3s;
+        margin-top:10px;
     }
 
     button:hover{
@@ -82,11 +84,29 @@
     }
 
     #result{
-    margin-top:20px;
-    text-align:center;
-    font-size:16px;
-    line-height:1.6;
-    word-wrap:break-word;
+        margin-top:20px;
+        text-align:center;
+        font-size:16px;
+        line-height:1.6;
+        word-wrap:break-word;
+        color:#111827;
+    }
+
+    .assignment-btn{
+        display:block;
+        text-align:center;
+        text-decoration:none;
+        background:#1e3a8a;
+        color:white;
+        padding:14px;
+        border-radius:10px;
+        margin-top:18px;
+        font-weight:bold;
+        transition:0.3s;
+    }
+
+    .assignment-btn:hover{
+        background:#172554;
     }
 
     @media(max-width:480px){
@@ -133,6 +153,13 @@
     </button>
 
     <div id="result"></div>
+
+    <!-- Assignment Section Button -->
+    <a href="https://reneeheninnazareth.github.io/sem4-fet/"
+       target="_blank"
+       class="assignment-btn">
+       Assignment Section
+    </a>
 
 </div>
 
