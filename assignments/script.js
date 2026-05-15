@@ -7,7 +7,9 @@ function savePassword(){
     document.getElementById("createPassword").value;
 
     document.getElementById("result").innerHTML =
-    "<span style='color:green;'>Password Saved Successfully</span>";
+    "<span style='color:green; font-weight:bold;'>"
+    + "Password Saved Successfully"
+    + "</span>";
 }
 
 function checkPassword(){
@@ -28,7 +30,7 @@ function checkPassword(){
             "<span style='color:green; font-weight:bold;'>"
             + "Correct Password<br><br>"
             + "Student Name : Renee<br>"
-            + "Department : CSE<br>"
+            + "Department : Computer Science<br>"
             + "Semester : 4th Semester<br>"
             + "Status : Active"
             + "</span>";
