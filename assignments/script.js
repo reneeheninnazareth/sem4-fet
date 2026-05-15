@@ -6,10 +6,30 @@ function savePassword(){
     savedPassword =
     document.getElementById("createPassword").value;
 
-    document.getElementById("result").innerHTML =
+    let result =
+    document.getElementById("result");
+
+    if(savedPassword === ""){
+
+        result.innerHTML =
+        "<span style='color:red;'>Please create a password</span>";
+
+        return;
+    }
+
+    result.innerHTML =
     "<span style='color:green; font-weight:bold;'>"
-    + "Password Saved Successfully"
+    + "Password Created Successfully<br>"
+    + "Now enter password to access information"
     + "</span>";
+
+    // Hide create section
+    document.getElementById("createSection").style.display =
+    "none";
+
+    // Show login section
+    document.getElementById("loginSection").style.display =
+    "block";
 }
 
 function checkPassword(){
@@ -23,8 +43,7 @@ function checkPassword(){
     // Do While Loop
     do{
 
-        if(userPassword === savedPassword &&
-           savedPassword !== ""){
+        if(userPassword === savedPassword){
 
             result.innerHTML =
             "<span style='color:green; font-weight:bold;'>"
