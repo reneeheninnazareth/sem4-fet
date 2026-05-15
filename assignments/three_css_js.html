@@ -1,61 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Opportunity Form</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+    }
+
+    .container{
+        background:white;
+        padding:25px;
+        width:350px;
+        border-radius:10px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h1{
+        text-align:center;
+        color:#333;
+    }
+
+    input, select{
+        width:100%;
+        padding:8px;
+        margin-top:5px;
+        border:1px solid #ccc;
+        border-radius:5px;
+    }
+
+    .inline{
+        width:auto;
+    }
+
+    .btn{
+        background:#007bff;
+        color:white;
+        border:none;
+        cursor:pointer;
+        margin-top:10px;
+    }
+
+    .btn:hover{
+        background:#0056b3;
+    }
+
+    #result{
+        margin-top:20px;
+        background:#eef;
+        padding:10px;
+        border-radius:5px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
 <h1>JOB OPPORTUNITY</h1>
-<form>
+
+<form onsubmit="showdata(event)">
+
 <label>Name</label>
-<br>
-<input type='text' placeholder='Enter Name'>
+<input type="text" id="name" placeholder="Enter Name" required>
+
 <br><br>
+
 <label>Education</label>
-<select>
-<option>CSE</option>
-<option>AIML</option>
-<option>IT</option>
-<option>ECE</option>
+<select id="edu">
+    <option>CSE</option>
+    <option>AIML</option>
+    <option>IT</option>
+    <option>ECE</option>
 </select>
+
 <br><br>
 
 <label>Email</label>
-<br>
-<input type='email' placeholder='Enter Email'>
+<input type="email" id="email" placeholder="Enter Email" required>
+
 <br><br>
-<label>Gender:</label>
-<input type='radio'  name='gender' value='male'>Male
-<input type='radio'  name='gender' value='female'>Female
+
+<label>Gender:</label><br>
+<input type="radio" class="inline" name="gender" value="Male"> Male
+<input type="radio" class="inline" name="gender" value="Female"> Female
+
 <br><br>
-<label>Programming Language:</label>
-<input type='checkbox'>Python
-<input type='checkbox'>C
-<input type='checkbox'>C++
+
+<label>Programming Language:</label><br>
+<input type="checkbox" class="lng inline" value="Python"> Python
+<input type="checkbox" class="lng inline" value="C"> C
+<input type="checkbox" class="lng inline" value="C++"> C++
+
 <br><br>
-<label>Availabilty</label>
-<input type='radio' name='availability'>Full time
-<input type='radio' name='availability'>Part time
+
+<label>Availability:</label><br>
+<input type="radio" class="inline" name="availability" value="Full Time"> Full Time
+<input type="radio" class="inline" name="availability" value="Part Time"> Part Time
+
 <br><br>
+
 <label>Languages Known:</label><br>
-<select name="languages[]" multiple size="4">
-  <option value="english">English</option>
-  <option value="hindi">Hindi</option>
-  <option value="kannada">Kannada</option>
-  <option value="tamil">Tamil</option>
+<select id="languages" multiple size="4">
+    <option>English</option>
+    <option>Hindi</option>
+    <option>Kannada</option>
+    <option>Tamil</option>
 </select>
+
 <br><br>
-<input type='submit' value='Submit'>
+
+<input type="submit" value="Submit" class="btn">
+
 </form>
+
+<div id="result"></div>
+
 </div>
-<script><script>
+
+<script>
+
 function showdata(e){
-e.preventDefault();
-let name=document.getElementById("name").value;
-let edu=document.getElementById("edu").value;
-let email=document.getElementById("email").value;
-let gender=document.querySelector('input[name="gender"]:checked');
-let lng=document.querySelectorAll(".lng:checked");
-let list=[];
-lng.forEach(1=>list.push(1.value));
-docment.getElementById("result").innerHTML=
-"Name:"+name+"<br>"
-+"Education:"+edu+"<br>"+
-</script>
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let edu = document.getElementById("edu").value;
+    let email = document.getElementById("email").value;
+
+    let gender = document.querySelector('input[name="gender"]:checked');
+    gender = gender ? gender.value : "Not Selected";
+
+    let availability = document.querySelector('input[name="availability"]:checked');
+    availability = availability ? availability.value : "Not Selected";
+
+    let lng = document.querySelectorAll(".lng:checked");
+
+    let list = [];
+
+    lng.forEach(item => {
+        list.push(item.value);
+    });
+
+    let languages = document.getElementById("languages");
+    let selectedLanguages = [];
+
+    for(let option of languages.options){
+        if(option.selected){
+            selectedLanguages.push(option.value);
+        }
+    }
+
+    document.getElementById("result").innerHTML =
+        "<h3>Submitted Details</h3>" +
+        "Name: " + name + "<br>" +
+        "Education: " + edu + "<br>" +
+        "Email: " + email + "<br>" +
+        "Gender: " + gender + "<br>" +
+        "Programming Languages: " + list.join(", ") + "<br>" +
+        "Availability: " + availability + "<br>" +
+        "Languages Known: " + selectedLanguages.join(", ");
+}
 
 </script>
+
 </body>
 </html>
