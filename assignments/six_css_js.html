@@ -5,7 +5,7 @@
     <meta name="viewport"
     content="width=device-width, initial-scale=1.0">
 
-    <title>Password System</title>
+    <title>Password Security System</title>
 
     <style>
 
@@ -85,8 +85,28 @@
             font-size:16px;
         }
 
+        /* Login section hidden initially */
         #loginSection{
             display:none;
+        }
+
+        @media(max-width:600px){
+
+            .container{
+                padding:20px;
+            }
+
+            h2{
+                font-size:24px;
+            }
+
+            input{
+                font-size:15px;
+            }
+
+            button{
+                font-size:15px;
+            }
         }
 
     </style>
@@ -134,7 +154,8 @@
 
 </div>
 
+<!-- External JavaScript File -->
 <script src="script.js"></script>
 
 </body>
-</html>
+</html>        
