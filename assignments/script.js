@@ -16,7 +16,7 @@ function handlePassword(){
     let label =
     document.getElementById("labelText");
 
-    // Create Password
+
     if(isPasswordCreated == false){
 
         savedPassword = passwordBox.value;
@@ -53,10 +53,8 @@ function handlePassword(){
         return;
     }
 
-    // Verify Password
     let userPassword = passwordBox.value;
 
-    // Do While Loop
     do{
 
         if(userPassword == savedPassword){
@@ -84,7 +82,6 @@ function handlePassword(){
 
     }while(false);
 
-    // While Loop
     while(attempts >= 3){
 
         result.innerHTML =
