@@ -7,6 +7,10 @@
 
     <style>
 
+        *{
+            box-sizing: border-box;
+        }
+
         body{
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #dbeafe, #f0f9ff);
@@ -18,28 +22,28 @@
             background:#1e3a8a;
             color:white;
             text-align:center;
-            padding:20px;
-            font-size:30px;
+            padding:18px;
+            font-size:28px;
             font-weight:bold;
         }
 
         .main{
-            width:70%;
-            margin:auto;
-            padding:30px;
+            width:90%;
+            max-width:700px;
+            margin:30px auto;
         }
 
         .section{
             background:white;
-            padding:30px;
+            padding:25px;
             border-radius:15px;
-            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);
         }
 
         h2{
-            color:#1e3a8a;
-            margin-bottom:20px;
             text-align:center;
+            color:#1e3a8a;
+            margin-bottom:25px;
         }
 
         label{
@@ -49,8 +53,8 @@
         }
 
         select{
-            width:320px;
-            padding:10px;
+            width:100%;
+            padding:12px;
             margin-top:10px;
             margin-bottom:20px;
             border:2px solid #1e3a8a;
@@ -59,17 +63,18 @@
             background:#f8fafc;
         }
 
-        select:hover{
-            background:#e0f2fe;
+        select option{
+            padding:10px;
         }
 
         .output{
             margin-top:20px;
             padding:15px;
             background:#dbeafe;
-            border-left:6px solid #1e3a8a;
-            font-size:18px;
+            border-left:5px solid #1e3a8a;
             border-radius:8px;
+            font-size:17px;
+            word-wrap: break-word;
         }
 
         footer{
@@ -78,6 +83,34 @@
             color:white;
             padding:15px;
             margin-top:30px;
+        }
+
+        @media(max-width:600px){
+
+            header{
+                font-size:22px;
+                padding:15px;
+            }
+
+            .section{
+                padding:18px;
+            }
+
+            h2{
+                font-size:22px;
+            }
+
+            label{
+                font-size:16px;
+            }
+
+            select{
+                font-size:15px;
+            }
+
+            .output{
+                font-size:15px;
+            }
         }
 
     </style>
@@ -95,7 +128,7 @@
 
         <h2>Course and Subject Selection</h2>
 
-        <label>Select Department:</label><br>
+        <label>Select Department:</label>
 
         <select id="department">
             <option value="">-- Select Department --</option>
@@ -116,9 +149,7 @@
             </option>
         </select>
 
-        <br>
-
-        <label>Select Subjects:</label><br>
+        <label>Select Subjects:</label>
 
         <select id="subjects" multiple size="6">
             <option value="Mathematics">Mathematics</option>
@@ -148,7 +179,6 @@
     let result = document.getElementById("result");
 
     department.addEventListener("change", displaySelection);
-
     subjects.addEventListener("change", displaySelection);
 
     function displaySelection(){
