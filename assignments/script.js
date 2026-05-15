@@ -1,54 +1,68 @@
 let savedPassword = "";
 let attempts = 0;
+let isPasswordCreated = false;
 
-function savePassword(){
+function handlePassword(){
 
-    savedPassword =
-    document.getElementById("createPassword").value;
+    let passwordBox =
+    document.getElementById("passwordBox");
 
     let result =
     document.getElementById("result");
 
-    if(savedPassword === ""){
+    let button =
+    document.getElementById("mainButton");
+
+    let label =
+    document.getElementById("labelText");
+
+    // Create Password
+    if(isPasswordCreated == false){
+
+        savedPassword = passwordBox.value;
+
+        if(savedPassword == ""){
+
+            result.innerHTML =
+            "<span style='color:red;'>"
+            + "Please create a password"
+            + "</span>";
+
+            return;
+        }
 
         result.innerHTML =
-        "<span style='color:red;'>Please create a password</span>";
+        "<span style='color:green;font-weight:bold;'>"
+        + "Password Created Successfully<br>"
+        + "Submit Password to Continue"
+        + "</span>";
+
+        passwordBox.value = "";
+
+        passwordBox.placeholder =
+        "Enter Password";
+
+        label.innerHTML =
+        "Enter Password";
+
+        button.innerHTML =
+        "Login";
+
+        isPasswordCreated = true;
 
         return;
     }
 
-    result.innerHTML =
-    "<span style='color:green; font-weight:bold;'>"
-    + "Password Created Successfully"
-    + "</span>";
-
-    // Hide create password section
-    document.getElementById("createSection").style.display =
-    "none";
-
-    // Show login section
-    document.getElementById("loginSection").style.display =
-    "block";
-
-    // Automatically move cursor to password box
-    document.getElementById("checkPassword").focus();
-}
-
-function checkPassword(){
-
-    let userPassword =
-    document.getElementById("checkPassword").value;
-
-    let result =
-    document.getElementById("result");
+    // Verify Password
+    let userPassword = passwordBox.value;
 
     // Do While Loop
     do{
 
-        if(userPassword === savedPassword){
+        if(userPassword == savedPassword){
 
             result.innerHTML =
-            "<span style='color:green; font-weight:bold;'>"
+            "<span style='color:green;font-weight:bold;'>"
             + "Correct Password<br><br>"
             + "Student Name : Renee<br>"
             + "Department : Computer Science<br>"
@@ -62,7 +76,7 @@ function checkPassword(){
         attempts++;
 
         result.innerHTML =
-        "<span style='color:red; font-weight:bold;'>"
+        "<span style='color:red;font-weight:bold;'>"
         + "Wrong Password<br>"
         + "Remaining Attempts : "
         + (3 - attempts)
@@ -74,11 +88,12 @@ function checkPassword(){
     while(attempts >= 3){
 
         result.innerHTML =
-        "<span style='color:red; font-weight:bold;'>"
-        + "Access Blocked! Too many wrong attempts."
+        "<span style='color:red;font-weight:bold;'>"
+        + "Access Blocked!"
         + "</span>";
 
-        document.getElementById("checkPassword").disabled = true;
+        passwordBox.disabled = true;
+        button.disabled = true;
 
         break;
     }
